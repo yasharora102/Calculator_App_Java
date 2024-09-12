@@ -1,0 +1,32 @@
+<resources>
+
+    <!-- Base style for calculator buttons -->
+    <style name="CalcButtonBase">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">64dp</item>
+        <item name="android:layout_gravity">fill</item>
+        <item name="android:layout_margin">8dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:background">@drawable/button_background</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:layout_columnWeight">1</item>
+    </style>
+
+    <!-- Style for number buttons -->
+    <style name="CalcButtonNumber" parent="CalcButtonBase">
+        <item name="android:backgroundTint">#333333</item>
+    </style>
+
+    <!-- Style for function buttons (C, +/-, %) -->
+    <style name="CalcButtonFunction" parent="CalcButtonBase">
+        <item name="android:backgroundTint">#A6A6A6</item>
+        <item name="android:textColor">#000000</item> <!-- Ensures black text color -->
+    </style>
+
+    <!-- Style for operator buttons (+, -, *, /, =) -->
+    <style name="CalcButtonOperator" parent="CalcButtonBase">
+        <item name="android:backgroundTint">#FFA500</item>
+    </style>
+
+</resources>
