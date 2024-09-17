@@ -80,25 +80,28 @@ public class MainActivity extends AppCompatActivity {
 
     private void calculateResult() {
         double secondOperand = Double.parseDouble(currentInput);
-        double result = 0;
+        Operation operation = null;
 
         switch (operator) {
             case "+":
-                result = firstOperand + secondOperand;
+                operation = new Addition(firstOperand, secondOperand);
                 break;
             case "−":
-                result = firstOperand - secondOperand;
+                operation = new Subtraction(firstOperand, secondOperand);
                 break;
             case "×":
-                result = firstOperand * secondOperand;
+                operation = new Multiplication(firstOperand, secondOperand);
                 break;
             case "÷":
-                result = firstOperand / secondOperand;
+                operation = new Division(firstOperand, secondOperand);
                 break;
         }
 
-        tvResult.setText(String.valueOf(result));
-        currentInput = "";
+        if (operation != null) {
+            double result = operation.calculate();
+            tvResult.setText(String.valueOf(result));
+            currentInput = "";
+        }
     }
 
     private void calculatePercentage() {
